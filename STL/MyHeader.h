@@ -58,31 +58,15 @@ inline void error(const string& s, const string& s2)
 	error(s + s2);
 }
 
-// SPECIFIQUE AU PROJET EN COURS **************************************************************************************************************************************
-// Définition des prototypes de fonctions écrites dans la 1ère version de HuntTheWumpus (corps présent dans HuntTheWumpus.cpp)
-namespace HuntTheWumpus_lib {
-
-	const int EVENT_WUMPUS = 1;
-	const int EVENT_PIT = 2;
-	const int EVENT_BAT = 3;
-	const int EVENT_EMPTY_ROOM = 4;
-
-	const int SHOOT_WUMPUS_KILLED = 1;
-	const int SHOOT_WUMPUS_WAKEUP = 2;
-	const int SHOOT_NOEFFECT = 3;
-	
-	int nb_aleatoire(const int min, const int max);
-	void tunnels(const int room, const int nb_rooms_maze, multimap<int, int>&current_maze);
-	bool is_wumpus_here(const int room, const int wumpus_room);
-	bool is_pit_here(const int room, const vector<int>& pit_rooms);
-	bool is_bat_here(const int room, const vector<int>& bat_rooms);
-	void tunnels_in_room(const int room, vector<int>& tunnels, const multimap<int, int>&current_maze);
-	bool is_new_room_valid(const int room, const vector<int>& tunnels);
-	const int hazard(int room, const int wumpus_room, const vector<int>& pit_rooms, const vector<int>& bat_rooms, int& player_room, const int nb_rooms_maze);
-	int wumpus_move(const int w_room, const multimap<int, int>&current_maze);
-	const int shoot(const int room, const vector<int>& tunnels, int& wumpus_room, const multimap<int, int>&current_maze);
-
+int nb_aleatoire(const int min, const int max)
+{
+	// Cette fonction helper gère le tirage de nombres aléatoires entre deux bornes passées en arguments
+	// On préfère la fonction C rand() à randint(min, max) incluse dans std_lib_facilities.h
+	// Le seeding doit être réalisé dans le main() et permet une génération pseudo-aléatoire (meilleurs outils à partir de C++ 11)
+	// srand((int)time(0));	// Seeding du moteur de génération aléatoire en partant de l'heure
+	int a = rand() % max + min;
+	return a;
 }
-// *************************************************************************************************************************************************************************
+
 
 #endif
