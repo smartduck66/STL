@@ -1,7 +1,5 @@
 contributed articles 
 
-Doi:10.1145/1646353.1646374 
-
 How Coverity built a bug-finding tool, and 
 a business, around the unlimited supply 
 of bugs in software systems. 
@@ -60,7 +58,6 @@ path was infeasible (path-sensitive).
 A glance through the literature reveals 
 many ways to go about static bug 
 
-finding.1,2,4,7,8,11
 
  For us, the central religion 
 was results: If it worked, it was 
@@ -98,8 +95,6 @@ or analysis tricks, run them over a few
 
 66 communicAtions of the Acm | FeBrUAry 2010 | vOl. 53 | nO. 2 
 
-
-“coDEProFiLES” by W. braDForD PaLEy, httP://DiDi.coM 
 
 million lines of code (typically Linux), 
 count the bugs, and write everything 
@@ -1489,10 +1484,4 @@ in San Francisco, ca.; http://www.coverity.com
 Dawson Engler (engler@stanford.edu) is an associate 
 professor in the Department of computer Science and 
 Electrical Engineering at Stanford University, Stanford, ca, 
-and technical advisor to coverity, inc., San Francisco, ca. 
-
-© 2010 acM 0001-0782/10/0200 $10.00 
-
-FeBrUAry 2010 | vOl. 53 | nO. 2 | communicAtions of the Acm 75 
-
-
+and technical advisor to coverity, inc., San Francisco, ca.
