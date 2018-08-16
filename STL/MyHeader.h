@@ -6,7 +6,7 @@ MyHeader.h
 first own header
 
 Revised July 21, 2018: initial release
-Revised August 3, 2018: function prototypes added
+Revised August 16, 2018: open file added
 
 */
 
@@ -15,8 +15,6 @@ Revised August 3, 2018: function prototypes added
 
 #include<string>
 #include<iostream>
-#include<vector>
-#include<map>	// pour bénéficier du container multimap
 
 using namespace std;
 
@@ -58,7 +56,7 @@ inline void error(const string& s, const string& s2)
 	error(s + s2);
 }
 
-int nb_aleatoire(const int min, const int max)
+int random_number(const int min, const int max)
 {
 	// Cette fonction helper gère le tirage de nombres aléatoires entre deux bornes passées en arguments
 	// On préfère la fonction C rand() à randint(min, max) incluse dans std_lib_facilities.h
@@ -68,5 +66,22 @@ int nb_aleatoire(const int min, const int max)
 	return a;
 }
 
+ifstream open_file_read(string filename)
+{
+	// Cette fonction helper permet d'ouvrir un fichier en lecture
+	ifstream ist{ filename };
+	ist.exceptions(ist.exceptions() | ios_base::badbit);
+	if (!ist)error("Impossible d'ouvrir le fichier ", filename);
+	return ist;
+}
+
+ofstream open_file_write(string filename)
+{
+	// Cette fonction helper permet d'ouvrir un fichier en écriture
+	ofstream ost{ filename };
+	ost.exceptions(ost.exceptions() | ios_base::badbit);
+	if (!ost)error("Impossible d'ouvrir le fichier ", filename);
+	return ost;
+}
 
 #endif
